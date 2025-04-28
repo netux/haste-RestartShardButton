@@ -1,8 +1,8 @@
 ﻿using Landfall.Haste;
 using System.Reflection;
-using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using Zorro.Localization;
 using Zorro.UI.Modal;
 
 namespace HasteRestartShardMod;
@@ -59,7 +59,7 @@ public class RestartShardButton : MonoBehaviour
         restartShardButtonTransform.name = "RestartButton";
 
         var restartShardButtonTextTransform = restartShardButtonTransform.Find("Text");
-        restartShardButtonTextTransform.GetComponent<TextMeshProUGUI>().text = "Restart Shard";
+        restartShardButtonTextTransform.GetComponent<LocalizeUIText>().SetString(new UnlocalizedString("Restart Shard"));
 
         var restartShardButtonIconTransform = restartShardButtonTransform.Find("Icon");
         restartShardButtonIconTransform.GetComponent<Image>().sprite = GetButtonIconSprite();
