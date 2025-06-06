@@ -8,12 +8,9 @@ public class RestartShardOptionsMod
 {
     static RestartShardOptionsMod()
     {
-        On.EscapeMenuMainPage.OnPageEnter += static (original, escapeMenuMainPage) =>
+        On.EscapeMenuAbandonPage.OnQuickRestartButtonClicked += static (_original, _escapeMenuMainPage) =>
         {
-            original(escapeMenuMainPage);
-
-            escapeMenuMainPage.m_QuickRestart.onClick.RemoveAllListeners();
-            escapeMenuMainPage.m_QuickRestart.onClick.AddListener(OpenRestartShardPrompt);
+            OpenRestartShardPrompt();
         };
     }
 
